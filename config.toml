@@ -36,7 +36,7 @@ subTitle = "A small blog site of sslime336."
 defaultTheme = "auto"              # default theme when first visit (auto|dark|light)
 
 # Source URL of the website, will appear in the footer
-sourceURL = "https://github.com/sslime336/sslime336.github.io"
+sourceURL = "https://github.com/sslime336/sslime336.github.io/tree/hugo"
 
 # Use CloudFlare Workers to accelerate the Google Analytics
 # If you are using this please comment the googleAnalytics above
