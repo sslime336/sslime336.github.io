@@ -13,7 +13,7 @@ draft: false
 [`tracing`](https://docs.rs/tracing/latest/tracing/) 是一个由 [`tokio`](https://github.com/tokio-rs) 开发并维护
 的框架，这个框架用于对 Rust 程序进行检测，收集结构化、事件驱动的诊断信息。
 
-*部分翻译自: <https://github.com/tokio-rs/tracing#overview>*
+_部分翻译自: <https://github.com/tokio-rs/tracing#overview>_
 
 <!--more-->
 
@@ -27,7 +27,7 @@ draft: false
 
 `collector` 实现了一种收集 trace 信息的方式，比如直接将信息结构化输出到 `stdout`(如使用: `info!`, `debug!`, `error!`)
 
-*`tracing` 按照 Rust 门面日志库 [`log`](https://github.com/rust-lang/log) 开发，在其依赖项里面我们可以看到这点:*
+_`tracing` 按照 Rust 门面日志库 [`log`](https://github.com/rust-lang/log) 开发，在其依赖项里面我们可以看到这点:_
 
 ```toml
 # tracing/Cargo.toml
@@ -88,3 +88,23 @@ fn main() {
 [`Layer` & `Filter`](https://docs.rs/tracing-subscriber/latest/tracing_subscriber/index.html#layers-and-filters)
 
 [`Registry`](https://docs.rs/tracing-subscriber/latest/tracing_subscriber/registry/index.html)
+
+举个例子:
+
+~~直接拿 [`ricq`](https://github.com/lz1998/RICQ) 的代码哩~~
+
+```rust
+fn main() {
+    tracing_subscriber::registry()
+        .with(tracing_subscriber::fmt::layer().with_target(true))
+        .with(
+            tracing_subscriber::filter::Targets::new()
+                .with_target("ricq", Level::DEBUG)
+                .with_target("qrcode_login", Level::DEBUG)
+                .with_target("ano", Level::DEBUG),
+        )
+        .init();
+}
+```
+
+<p><small><del>悄咪咪说一句: no_std 真就不如 default-features 好用呗qwq<del></small></p>
