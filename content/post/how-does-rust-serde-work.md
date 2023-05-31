@@ -1,5 +1,5 @@
 ---
-title: "How Does Rust Serde Work"
+title: "Rust 序列化框架 serde 浅析"
 date: 2023-05-31T12:07:28+08:00
 tags: ["serde.rs", "todo"]
 draft: true
