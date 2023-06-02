@@ -5,7 +5,7 @@ tags: ["notes", "nim"]
 draft: false
 ---
 
-这个问题主要涉及到函数传值，但具体是传值还是传引用对于 Nim 来说并不回答，编译器会尽量采用更高效的方式
+这个问题主要涉及到函数传值，但具体是传值还是传引用对于 Nim 来说并不好说，编译器会尽量采用更高效的方式
 
 如果选用不同的 GC 策略，那么可能又是另一回事(比如 ARC/ORC 可能根据上下文来说就是移动语义)
 
@@ -61,14 +61,12 @@ intro(p);
 
 但如果我们对 `Person` 进行下面的修改:
 
-```nim
-  type
-    Person = object
-      name: string
-      age: Natural
-----------------------------------------
-+     padding {.used.}: array[512, int]
-----------------------------------------
+```diff
+type
+  Person = object
+    name: string
+    age: Natural
++   padding {.used.}: array[512, int]
 ```
 
 我们加入了一个 `padding` 字段，使现在 `Person` 的大小变成了 `sizeof(Person): 4120 Bytes`
