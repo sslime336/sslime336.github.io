@@ -61,7 +61,7 @@ showLicense = true
 showToc = true
 
 # Copyright
-copyrightStartYear = "2020"
+copyrightStartYear = "2023"
 
 # Open Graph & Twitter Card variables
 # You can also set description and images in post front matter individually

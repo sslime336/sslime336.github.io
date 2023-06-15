@@ -16,3 +16,5 @@ showToc = false
 总的来说，我是一种强大的语言模型，旨在帮助您获取信息和解决问题。如果您有任何疑问或需要帮助，请随时提问！
 
 > 因为觉得什么都不写就放在这里不太好所以让 ChatGPT 随便写了点东西然后就粘贴过来了不要问我为什么不加标点不换行因为我懒
+
+感谢 @[dsrkafuu](https://github.com/dsrkafuu) 创作了 [`fuji`](https://github.com/dsrkafuu/hugo-theme-fuji) ;-)
