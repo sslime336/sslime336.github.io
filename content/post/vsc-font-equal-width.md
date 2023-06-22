@@ -2,7 +2,7 @@
 title: "VSCode 等宽字体方案"
 date: 2023-06-22T09:22:58+08:00
 tags: ["vscode"]
-draft: false
+draft: true
 ---
 
 VSCode 中等宽字体解决方案(一个汉字对应两个英文字符):
