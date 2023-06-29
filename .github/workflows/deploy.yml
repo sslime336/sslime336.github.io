@@ -1,4 +1,5 @@
 name: Update sslime336.github.io
+
 on:
   push:
     branches:
@@ -25,7 +26,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTION_DEPLOY_KEY }}
-          external_repository: sslime336/sslime336.github.io # Page 仓库
           publish_branch: master # Page 仓库的分支
           publish_dir: ./public # 静态网页路径
           commit_message: ${{ github.event.head_commit.message }}
