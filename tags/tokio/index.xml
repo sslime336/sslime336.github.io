@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tokio on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/tags/tokio/</link>
+    <link>https://sslime336.github.io/blog/tags/tokio/</link>
     <description>Recent content in tokio on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 31 May 2023 16:34:36 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/tokio/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 16:34:36 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/tokio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tokio tracing</title>
-      <link>https://sslime336.github.io/post/tracing-subscriber/</link>
+      <link>https://sslime336.github.io/blog/post/tracing-subscriber/</link>
       <pubDate>Wed, 31 May 2023 16:34:36 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/post/tracing-subscriber/</guid>
+      <guid>https://sslime336.github.io/blog/post/tracing-subscriber/</guid>
       <description>&lt;p&gt;本文简单总结了 &lt;code&gt;tracing&lt;/code&gt; 和 &lt;code&gt;tracing-subscriber&lt;/code&gt; 的使用，详细内容请参阅官方文档:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;tracing&lt;/code&gt;: &lt;a href=&#34;https://docs.rs/tracing/latest/tracing/index.html&#34; target=&#34;_blank&#34;&gt;https://docs.rs/tracing/latest/tracing/index.html&lt;/a&gt;&lt;/li&gt;

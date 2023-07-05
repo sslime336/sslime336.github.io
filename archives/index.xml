@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Archives on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/archives/</link>
+    <link>https://sslime336.github.io/blog/archives/</link>
     <description>Recent content in Archives on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://sslime336.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://sslime336.github.io/blog/archives/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
