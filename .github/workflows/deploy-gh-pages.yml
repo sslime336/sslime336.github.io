@@ -2,8 +2,7 @@ name: Update sslime336.github.io
 
 on:
   push:
-    branches:
-      - master
+    branches: "master"
 
 jobs:
   deploy2master:
