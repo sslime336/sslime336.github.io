@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.115.1">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>tokio tracing - 杂鱼_zaYu</title>
+
+
+<meta name="author" content="sslime336" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="trace, rust, tokio" />
+
+
+<meta property="og:title" content="tokio tracing" />
+<meta name="twitter:title" content="tokio tracing" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sslime336.github.io/post/tracing-subscriber/" /><meta property="og:description" content="本文简单总结了 tracing 和 tracing-subscriber 的使用，详细内容请参阅官方文档:
+
+tracing: https://docs.rs/tracing/latest/tracing/index.html
+tracing-subscriber: https://docs.rs/tracing-subscriber/latest/tracing_subscriber/
+
+tracing 是一个由 tokio 开发并维护
+的框架，这个框架用于对 Rust 程序进行检测，收集结构化、事件驱动的诊断信息。
+部分翻译自: https://github.com/tokio-rs/tracing#overview" />
+<meta name="twitter:description" content="本文简单总结了 tracing 和 tracing-subscriber 的使用，详细内容请参阅官方文档:
+
+tracing: https://docs.rs/tracing/latest/tracing/index.html
+tracing-subscriber: https://docs.rs/tracing-subscriber/latest/tracing_subscriber/
+
+tracing 是一个由 tokio 开发并维护
+的框架，这个框架用于对 Rust 程序进行检测，收集结构化、事件驱动的诊断信息。
+部分翻译自: https://github.com/tokio-rs/tracing#overview" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="article:published_time" content="2023-05-31T16:34:36+08:00" /><meta property="article:modified_time" content="2023-05-31T16:34:36+08:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://sslime336.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='true'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://sslime336.github.io/">杂鱼_zaYu</a>
+            
+            <span class="title-sub">Nichts ist wahr, Alles ist erlaubt</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://sslime336.github.io/post/tracing-subscriber/">tokio tracing</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-05-31</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;705 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/trace">trace</a>&nbsp;<a href="/tags/rust">rust</a>&nbsp;<a href="/tags/tokio">tokio</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>本文简单总结了 <code>tracing</code> 和 <code>tracing-subscriber</code> 的使用，详细内容请参阅官方文档:</p>
+<ul>
+<li><code>tracing</code>: <a href="https://docs.rs/tracing/latest/tracing/index.html" target="_blank">https://docs.rs/tracing/latest/tracing/index.html</a></li>
+<li><code>tracing-subscriber</code>: <a href="https://docs.rs/tracing-subscriber/latest/tracing_subscriber/" target="_blank">https://docs.rs/tracing-subscriber/latest/tracing_subscriber/</a></li>
+</ul>
+<p><a href="https://docs.rs/tracing/latest/tracing/" target="_blank"><code>tracing</code></a> 是一个由 <a href="https://github.com/tokio-rs" target="_blank"><code>tokio</code></a> 开发并维护
+的框架，这个框架用于对 Rust 程序进行检测，收集结构化、事件驱动的诊断信息。</p>
+<p><em>部分翻译自: <a href="https://github.com/tokio-rs/tracing#overview" target="_blank">https://github.com/tokio-rs/tracing#overview</a></em></p>
+<p>该框架虽然是由 <code>tokio</code> 开发并维护的，但其并不需要 <code>tokio</code> 的运行时</p>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="对于可执行文件bin-crate">对于可执行文件(bin crate)</h3>
+<p>为了记录一系列事件驱动的 trace，应用程序需要实现一个与 <code>tracing</code> 兼容的信息收集器(<code>collector</code>)</p>
+<p><code>collector</code> 实现了一种收集 trace 信息的方式，比如直接将信息结构化输出到 <code>stdout</code>(如使用: <code>info!</code>, <code>debug!</code>, <code>error!</code>)</p>
+<p><em><code>tracing</code> 按照 Rust 门面日志库 <a href="https://github.com/rust-lang/log" target="_blank"><code>log</code></a> 开发，在其依赖项里面我们可以看到这点:</em></p>
+<pre><code class="language-toml"># tracing/Cargo.toml
+log = { version = &quot;0.4.17&quot;, optional = true }
+</code></pre>
+<p>上面说到对于具体的 trace，我们需要使用一个 <code>collector</code> 将其收集并处理，对于简单的场景，比如只需要
+将 trace 当成日志打印到控制台，我们可以使用 <code>tracing-subscriber</code> 的 <code>fmt</code> 模块:</p>
+<p>先添加依赖:</p>
+<pre><code class="language-toml"># lab-rs/Cargo.toml
+[dependencies]
+tracing = &quot;0.1&quot;
+tracing-subscriber = &quot;0.3.17&quot;
+</code></pre>
+<pre><code class="language-rust">use tracing::info;
+
+fn main() {
+    // 这里调用 fmt::init() 会装载一个全局的 tracing subscriber 来监听
+    // 当前发生的事情(events)
+    //
+    // 这里的 subcriber 就是一个 `collector`，只不过这是 `tokio` 官方实现的，如果要
+    // 实现自己的 `collector`，需要保证其与 `tracing` 兼容，即实现 [`tracing::Subcriber`]
+    tracing_subscriber::fmt::init();
+
+    info!(&quot;about to exit main&quot;);
+}
+</code></pre>
+<p><code>cargo r</code> 一下:</p>
+<pre><code class="language-bash">2023-05-31T09:14:17.211140Z  INFO lab_rs: about to exit main
+</code></pre>
+<p>可以看到我们的日志信息被收集并打印到了控制台</p>
+<p>而如果删去 <code>tracing_subscriber::fmt::init();</code>，你会发现什么都没有输出</p>
+<p><strong>注</strong>: 如果想要实现自己的 <code>collector</code> 则其需要满足 <code>tracing</code> 的 <a href="https://docs.rs/tracing/latest/tracing/trait.Subscriber.html" target="_blank"><code>Subscriber</code></a> trait</p>
+<h3 id="对于库文件lib-crate">对于库文件(lib crate)</h3>
+<p>我们只需要使用 <a href=""><code>tracing</code></a> 提供的一系列 marco 和方法就行，不需要使用 <code>subscriber</code></p>
+<blockquote>
+<p>Libraries should only rely on the tracing crate and use the provided macros
+and types to collect whatever information might be useful to downstream
+consumers.</p>
+</blockquote>
+<h2 id="subscriber-の-layerfilter-和-registry">Subscriber の <code>Layer</code>，<code>Filter</code> 和 <code>Registry</code></h2>
+<p>懒得写了直接看官方文档吧 😛</p>
+<p><a href="https://docs.rs/tracing-subscriber/latest/tracing_subscriber/index.html#layers-and-filters" target="_blank"><code>Layer</code> &amp; <code>Filter</code></a></p>
+<p><a href="https://docs.rs/tracing-subscriber/latest/tracing_subscriber/registry/index.html" target="_blank"><code>Registry</code></a></p>
+<p>举个例子:</p>
+<p><del>直接拿 <a href="https://github.com/lz1998/RICQ" target="_blank"><code>ricq</code></a> 的代码哩</del></p>
+<pre><code class="language-rust">fn main() {
+    tracing_subscriber::registry()
+        .with(tracing_subscriber::fmt::layer().with_target(true))
+        .with(
+            tracing_subscriber::filter::Targets::new()
+                .with_target(&quot;ricq&quot;, Level::DEBUG)
+                .with_target(&quot;qrcode_login&quot;, Level::DEBUG)
+                .with_target(&quot;ano&quot;, Level::DEBUG),
+        )
+        .init();
+}
+</code></pre>
+<p><small><del>悄咪咪说一句: no_std 真就不如 default-features 好用呗qwq<del></small></p>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用方法">使用方法</a>
+      <ul>
+        <li><a href="#对于可执行文件bin-crate">对于可执行文件(bin crate)</a></li>
+        <li><a href="#对于库文件lib-crate">对于库文件(lib crate)</a></li>
+      </ul>
+    </li>
+    <li><a href="#subscriber-の-layerfilter-和-registry">Subscriber の <code>Layer</code>，<code>Filter</code> 和 <code>Registry</code></a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用方法">使用方法</a>
+      <ul>
+        <li><a href="#对于可执行文件bin-crate">对于可执行文件(bin crate)</a></li>
+        <li><a href="#对于库文件lib-crate">对于库文件(lib crate)</a></li>
+      </ul>
+    </li>
+    <li><a href="#subscriber-の-layerfilter-和-registry">Subscriber の <code>Layer</code>，<code>Filter</code> 和 <code>Registry</code></a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023-2023
+                <a href="https://sslime336.github.io/">sslime336</a>
+                 | <a href="https://github.com/sslime336/sslime336.github.io/tree/hugo">Source code</a> 
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 构建
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

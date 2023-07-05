@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.115.1">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>Nim 一本通(bushi) - 杂鱼_zaYu</title>
+
+
+<meta name="author" content="sslime336" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+
+<meta property="og:title" content="Nim 一本通(bushi)" />
+<meta name="twitter:title" content="Nim 一本通(bushi)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sslime336.github.io/post/start-nim-all-in-one/" /><meta property="og:description" content="本文假定您对 Nim 已经有一定的了解，本文并非零基础教程" />
+<meta name="twitter:description" content="本文假定您对 Nim 已经有一定的了解，本文并非零基础教程" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="article:published_time" content="2023-06-28T11:54:18+08:00" /><meta property="article:modified_time" content="2023-06-28T11:54:18+08:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://sslime336.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='true'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://sslime336.github.io/">杂鱼_zaYu</a>
+            
+            <span class="title-sub">Nichts ist wahr, Alles ist erlaubt</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://sslime336.github.io/post/start-nim-all-in-one/">Nim 一本通(bushi)</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-06-28</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;917 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;无标签</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>本文假定您对 <a href="https://nim-lang.org/" target="_blank">Nim</a> 已经有一定的了解，本文并非零基础教程</p>
+<h2 id="安装">安装🔭</h2>
+<p>建议的安装姿势: 使用 <a href="https://github.com/dom96/choosenim" target="_blank"><code>choosenim</code></a></p>
+<h3 id="windows">Windows🖥️</h3>
+<p>从这里 <a href="https://github.com/dom96/choosenim/releases" target="_blank">https://github.com/dom96/choosenim/releases</a> 下载压缩包(<code>.zip</code>)，不要下载 <code>.exe</code></p>
+<h3 id="unix">Unix🎵</h3>
+<p>[Optional] 代表可选</p>
+<pre><code class="language-sh">[CHOOSENIM_CHOOSE_VERSION=stable] curl https://nim-lang.org/choosenim/init.sh -sSf | sh
+</code></pre>
+<p>或者</p>
+<pre><code class="language-sh">[CHOOSENIM_CHOOSE_VERSION=stable] wget -qO - https://nim-lang.org/choosenim/init.sh | sh
+</code></pre>
+<p>*可以通过环境变量 <code>CHOOSENIM_CHOOSE_VERSION</code> 来指定安装的版本，默认是最新的发行版</p>
+<blockquote>
+<p>Note: Nim 也有类似于 Rust 的 <a href="https://github.com/nim-lang/nightlies/releases" target="_blank">nightly</a> 构建，这个构建是基于 <a href="https://github.com/nim-lang/Nim" target="_blank"><code>devel</code></a> 的.</p>
+<p>*Nim 虽然已经有相当一段时间的发展，但它仍然是一个小众的社区，所以我个人并不建议使用最新的 nightly(devel) 构建，因为您可能会收获一些无法立刻解决的 bug</p>
+</blockquote>
+<h3 id="配置">配置⚙️</h3>
+<h3 id="choosenim-"><code>choosenim</code> 🔧</h3>
+<p><code>choosenim</code> 会默认安装到 <code>~/.choosenim</code> 中，在 Windows 上是 <code>C:\User\&lt;Username&gt;\</code>.</p>
+<p>之后各个版本的工具链会安装这个目录，<code>choosenim</code> 也提供了 <code>--choosenimDir</code> 来指定其安装位置，有兴趣的可以自己试一试.</p>
+<h3 id="nimble-"><code>nimble</code> 📦</h3>
+<p><code>nimble</code> 类似于 Rust 的 <code>cargo</code>，是 Nim 的官方包管理器，在通过 <code>choosenim</code> 安装的时候会一块安装好.</p>
+<p><code>nimble</code> 的默认安装路径是 <code>~/.nimble</code>(请自行翻译成 Windows 上的相应目录😋)</p>
+<p>如果有需要，可以通过配置文件来修改默认的包安装路径<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>:</p>
+<ol>
+<li>Windows: <code>C:\Users\&lt;Username&gt;\AppData\Roaming\nimble\nimble.ini</code></li>
+<li>Unix: <code>~/.config/nimble/nimble.ini</code></li>
+</ol>
+<p>举个栗子🌰:</p>
+<pre><code class="language-ini"># 这是我个人的配置
+httpProxy = r&quot;127.0.0.1:7890&quot; # 下载依赖使用的代理
+nimbleDir = r&quot;E:\.nimble&quot;     # 默认下载/安装的包放到 E 盘
+</code></pre>
+<h3 id="nimcfg-"><code>nim.cfg</code> 🤖</h3>
+<p>接下来我们需要配置 Nim 的编译器，这个部分之所以存在是因为 Nim 当前的稳定版(昨天还是今天来着，刚从 1.6.12 更新到 1.6.14)仍然使用的是引用计数的 GC(refc)，而非高效的 ARC/ORC</p>
+<p>你可以在 <code>~/.choosenim/toolchains/</code> 中找到你正实际使用的 Nim 版本，之后可以修改其配置文件 <code>./nim-1.6.14/config/nim.cfg</code>:</p>
+<pre><code class="language-nim"># 同理，附上我的配置，只需找个地方加上这个即可
+
+# -------------------------------------------------------------------------- #
+#                          User defined by sslime336                         #
+# -------------------------------------------------------------------------- #
+cc = clang # 使用 LLVM 而非传统 GCC，因为有些包会依赖 libclang，虽然可以直接提供给
+           # GCC 这个库，但使用 LLVM 相对于 GCC 会带来更好的性能
+
+--gc:arc # 使用 ARC.
+         # ORC 虽然带来了循环引用内存泄露的消除，但是也引入的大多数时候不必要的性能损耗
+
+# 我们需要将修改后的 `nimble` 位置添加进来，不然会找不到依赖
+nimblepath=r&quot;E:\.nimble\pkgs&quot;
+nimblepath=r&quot;E:\.nimble\pkgs2&quot;
+
+# 这里我们根据不同的构建方式，如 -d:release, -d:danger，在指定位置生成带有后缀标记的缓存
+# *_r 表示 release 的缓存, *_rd 是 danger，*_d 是默认的 debug 构建的缓存
+@if release:
+  nimcache = r&quot;E:\.cache\nimcache\${projectName}_r&quot;
+@elif danger:
+  nimcache = r&quot;E:\.cache\nimcache\${projectName}_rd&quot;
+@else
+  # 需要提醒一句的是，虽然 nimc 默认是 debug 构建，但如果不指定 -d:debug，是不会走到
+  # @elif debug: 中的，所以我们直接使用 @else 来 workaround
+  nimcache = r&quot;E:\.cache\nimcache\${projectName}_d&quot;
+@end
+
+# ---------------------- End of sslime336's define -------------------------
+</code></pre>
+<p>行了，到这里就差不多了，现在可以:</p>
+<ol>
+<li>touch helloworld.nim and write some code</li>
+<li>use nimble init [pkgName] to do whatever you want</li>
+</ol>
+<h2 id="未完待续">未完待续&hellip;</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/nim-lang/nimble#configuration" target="_blank">https://github.com/nim-lang/nimble#configuration</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装🔭</a>
+      <ul>
+        <li><a href="#windows">Windows🖥️</a></li>
+        <li><a href="#unix">Unix🎵</a></li>
+        <li><a href="#配置">配置⚙️</a></li>
+        <li><a href="#choosenim-"><code>choosenim</code> 🔧</a></li>
+        <li><a href="#nimble-"><code>nimble</code> 📦</a></li>
+        <li><a href="#nimcfg-"><code>nim.cfg</code> 🤖</a></li>
+      </ul>
+    </li>
+    <li><a href="#未完待续">未完待续&hellip;</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装🔭</a>
+      <ul>
+        <li><a href="#windows">Windows🖥️</a></li>
+        <li><a href="#unix">Unix🎵</a></li>
+        <li><a href="#配置">配置⚙️</a></li>
+        <li><a href="#choosenim-"><code>choosenim</code> 🔧</a></li>
+        <li><a href="#nimble-"><code>nimble</code> 📦</a></li>
+        <li><a href="#nimcfg-"><code>nim.cfg</code> 🤖</a></li>
+      </ul>
+    </li>
+    <li><a href="#未完待续">未完待续&hellip;</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023-2023
+                <a href="https://sslime336.github.io/">sslime336</a>
+                 | <a href="https://github.com/sslime336/sslime336.github.io/tree/hugo">Source code</a> 
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 构建
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

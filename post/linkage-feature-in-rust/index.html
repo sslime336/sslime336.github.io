@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.115.1">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>Rust 中的链接 #[linkage = &#34;xxx&#34;] - 杂鱼_zaYu</title>
+
+
+<meta name="author" content="sslime336" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="linkage, link, unstable, rust" />
+
+
+<meta property="og:title" content="Rust 中的链接 #[linkage = &#34;xxx&#34;]" />
+<meta name="twitter:title" content="Rust 中的链接 #[linkage = &#34;xxx&#34;]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sslime336.github.io/post/linkage-feature-in-rust/" /><meta property="og:description" content="Rust 中有一个方便的注解 #[linkage]，这是一个不稳定的 feature，网上关于它的
+信息基本找不到，在我搜索半天后，在 Github 上找到了一个 tracking issue:
+rust-lang/rust issue#29603" />
+<meta name="twitter:description" content="Rust 中有一个方便的注解 #[linkage]，这是一个不稳定的 feature，网上关于它的
+信息基本找不到，在我搜索半天后，在 Github 上找到了一个 tracking issue:
+rust-lang/rust issue#29603" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="article:published_time" content="2023-07-05T12:20:54+08:00" /><meta property="article:modified_time" content="2023-07-05T12:20:54+08:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://sslime336.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='true'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://sslime336.github.io/">杂鱼_zaYu</a>
+            
+            <span class="title-sub">Nichts ist wahr, Alles ist erlaubt</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://sslime336.github.io/post/linkage-feature-in-rust/">Rust 中的链接 #[linkage = &#34;xxx&#34;]</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-07-05</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1276 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/linkage">linkage</a>&nbsp;<a href="/tags/link">link</a>&nbsp;<a href="/tags/unstable">unstable</a>&nbsp;<a href="/tags/rust">rust</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>Rust 中有一个方便的注解 <code>#[linkage]</code>，这是一个不稳定的 feature，网上关于它的
+信息基本找不到，在我搜索半天后，在 Github 上找到了一个 tracking issue:
+<a href="https://github.com/rust-lang/rust/issues/29603" target="_blank">rust-lang/rust issue#29603</a></p>
+<h2 id="目前-rust-支持的链接模型1">目前 Rust 支持的链接模型<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h2>
+<p>Rust 是基于 LLVM 的，所以使用的也是 LLVM 的链接模型</p>
+<pre><code class="language-rust">match name {
+    &quot;appending&quot; =&gt; Some(llvm::AppendingLinkage),
+    &quot;available_externally&quot; =&gt; Some(llvm::AvailableExternallyLinkage),
+    &quot;common&quot; =&gt; Some(llvm::CommonLinkage),
+    &quot;extern_weak&quot; =&gt; Some(llvm::ExternalWeakLinkage),
+    &quot;external&quot; =&gt; Some(llvm::ExternalLinkage),
+    &quot;internal&quot; =&gt; Some(llvm::InternalLinkage),
+    &quot;linkonce&quot; =&gt; Some(llvm::LinkOnceAnyLinkage),
+    &quot;linkonce_odr&quot; =&gt; Some(llvm::LinkOnceODRLinkage),
+    &quot;private&quot; =&gt; Some(llvm::PrivateLinkage),
+    &quot;weak&quot; =&gt; Some(llvm::WeakAnyLinkage),
+    &quot;weak_odr&quot; =&gt; Some(llvm::WeakODRLinkage),
+    _ =&gt; None,
+}
+</code></pre>
+<p><del>相关的值会转换成 LLVM 的链接，而 LLVM 现在的链接器还没有稳定，用的还是 gcc 的链接器?</del></p>
+<p>e.g.</p>
+<pre><code class="language-rust">#[linkage = &quot;weak&quot;]
+#[no_mangle]
+fn main() -&gt; ! {
+    ...
+}
+</code></pre>
+<h2 id="llvm-中不同的链接属性2">LLVM 中不同的链接属性<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></h2>
+<p>All Global Variables and Functions have one of the following types of linkage:</p>
+<ul>
+<li>
+<p><code>private</code></p>
+<p>Global values with “private” linkage are only directly accessible by objects
+in the current module. In particular, linking code into a module with a
+private global value may cause the private to be renamed as necessary to avoid
+collisions. Because the symbol is private to the module, all references can be
+updated. This doesn’t show up in any symbol table in the object file.</p>
+</li>
+<li>
+<p><code>internal</code></p>
+<p>Similar to private, but the value shows as a local symbol (STB_LOCAL in the
+case of ELF) in the object file. This corresponds to the notion of the
+‘static’ keyword in C.</p>
+</li>
+<li>
+<p><code>available_externally</code></p>
+<p>Globals with “available_externally” linkage are never emitted into the object
+file corresponding to the LLVM module. From the linker’s perspective, an
+available_externally global is equivalent to an external declaration. They
+exist to allow inlining and other optimizations to take place given knowledge
+of the definition of the global, which is known to be somewhere outside the
+module. Globals with available_externally linkage are allowed to be discarded
+at will, and allow inlining and other optimizations. This linkage type is only
+allowed on definitions, not declarations.</p>
+</li>
+<li>
+<p><code>linkonce</code></p>
+<p>Globals with “linkonce” linkage are merged with other globals of the same name
+when linkage occurs. This can be used to implement some forms of inline
+functions, templates, or other code which must be generated in each
+translation unit that uses it, but where the body may be overridden with a
+more definitive definition later. Unreferenced linkonce globals are allowed to
+be discarded. Note that linkonce linkage does not actually allow the optimizer
+to inline the body of this function into callers because it doesn’t know if
+this definition of the function is the definitive definition within the
+program or whether it will be overridden by a stronger definition. To enable
+inlining and other optimizations, use “linkonce_odr” linkage.</p>
+</li>
+<li>
+<p><code>weak</code></p>
+<p>“weak” linkage has the same merging semantics as linkonce linkage, except that
+unreferenced globals with weak linkage may not be discarded. This is used for
+globals that are declared “weak” in C source code.</p>
+</li>
+<li>
+<p><code>common</code></p>
+<p>“common” linkage is most similar to “weak” linkage, but they are used for
+tentative definitions in C, such as “int X;” at global scope. Symbols with
+“common” linkage are merged in the same way as weak symbols, and they may not
+be deleted if unreferenced. common symbols may not have an explicit section,
+must have a zero initializer, and may not be marked ‘constant’. Functions and
+aliases may not have common linkage.</p>
+</li>
+<li>
+<p><code>appending</code></p>
+<p>“appending” linkage may only be applied to global variables of pointer to
+array type. When two global variables with appending linkage are linked
+together, the two global arrays are appended together. This is the LLVM,
+typesafe, equivalent of having the system linker append together “sections”
+with identical names when .o files are linked.</p>
+<p>Unfortunately this doesn’t correspond to any feature in .o files, so it can
+only be used for variables like llvm.global_ctors which llvm interprets
+specially.</p>
+</li>
+<li>
+<p><code>extern_weak</code></p>
+<p>The semantics of this linkage follow the ELF object file model: the symbol is
+weak until linked, if not linked, the symbol becomes null instead of being an
+undefined reference.</p>
+</li>
+<li>
+<p><code>linkonce_odr</code>, <code>weak_odr</code></p>
+<p>Some languages allow differing globals to be merged, such as two functions
+with different semantics. Other languages, such as C++, ensure that only
+equivalent globals are ever merged (the “one definition rule” — “ODR”). Such
+languages can use the linkonce_odr and weak_odr linkage types to indicate that
+the global will only be merged with equivalent globals. These linkage types
+are otherwise the same as their non-odr versions.</p>
+</li>
+<li>
+<p><code>external</code></p>
+<p>If none of the above identifiers are used, the global is externally visible,
+meaning that it participates in linkage and can be used to resolve external
+symbol references.</p>
+</li>
+</ul>
+<p>It is illegal for a global variable or function declaration to have any linkage type other than external or extern_weak.</p>
+<h2 id="llvm-函数调用规范">LLVM 函数调用规范</h2>
+<p><em><a href="../func-call-convention">其他非 LLVM 调用规范</a></em></p>
+<ul>
+<li>“ccc” - The C calling convention</li>
+<li>“fastcc” - The fast calling convention</li>
+<li>“coldcc” - The cold calling convention</li>
+<li>“cc 10” - GHC convention</li>
+<li>“cc 11” - The HiPE calling convention</li>
+<li>“webkit_jscc” - WebKit’s JavaScript calling convention</li>
+<li>“anyregcc” - Dynamic calling convention for code patching</li>
+<li>“preserve_mostcc” - The PreserveMost calling convention</li>
+<li>“preserve_allcc” - The PreserveAll calling convention</li>
+<li>“cxx_fast_tlscc” - The CXX_FAST_TLS calling convention for access functions</li>
+<li>“tailcc” - Tail callable calling convention</li>
+<li>“swiftcc” - This calling convention is used for Swift language.</li>
+<li>“swifttailcc”</li>
+<li>“cfguard_checkcc” - Windows Control Flow Guard (Check mechanism)</li>
+<li>“cc &lt;n&gt;” - Numbered convention</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/rust-lang/rust/issues/29603#issuecomment-154123326" target="_blank">https://github.com/rust-lang/rust/issues/29603#issuecomment-154123326</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://llvm.org/docs/LangRef.html#linkage-types" target="_blank">https://llvm.org/docs/LangRef.html#linkage-types</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#目前-rust-支持的链接模型1">目前 Rust 支持的链接模型</a></li>
+    <li><a href="#llvm-中不同的链接属性2">LLVM 中不同的链接属性</a></li>
+    <li><a href="#llvm-函数调用规范">LLVM 函数调用规范</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#目前-rust-支持的链接模型1">目前 Rust 支持的链接模型</a></li>
+    <li><a href="#llvm-中不同的链接属性2">LLVM 中不同的链接属性</a></li>
+    <li><a href="#llvm-函数调用规范">LLVM 函数调用规范</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023-2023
+                <a href="https://sslime336.github.io/">sslime336</a>
+                 | <a href="https://github.com/sslime336/sslime336.github.io/tree/hugo">Source code</a> 
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 构建
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

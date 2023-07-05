@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on 杂鱼_zaYu</title>
+    <link>https://sslime336.github.io/tags/rust/</link>
+    <description>Recent content in rust on 杂鱼_zaYu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Jul 2023 12:20:54 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust 中的链接 #[linkage = &#34;xxx&#34;]</title>
+      <link>https://sslime336.github.io/post/linkage-feature-in-rust/</link>
+      <pubDate>Wed, 05 Jul 2023 12:20:54 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/linkage-feature-in-rust/</guid>
+      <description>&lt;p&gt;Rust 中有一个方便的注解 &lt;code&gt;#[linkage]&lt;/code&gt;，这是一个不稳定的 feature，网上关于它的
+信息基本找不到，在我搜索半天后，在 Github 上找到了一个 tracking issue:
+&lt;a href=&#34;https://github.com/rust-lang/rust/issues/29603&#34; target=&#34;_blank&#34;&gt;rust-lang/rust issue#29603&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rust 配置在 debug/release 构建中的不同表现</title>
+      <link>https://sslime336.github.io/post/rust-notes1/</link>
+      <pubDate>Tue, 13 Jun 2023 20:47:49 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/rust-notes1/</guid>
+      <description>&lt;p&gt;可以通过 &lt;code&gt;#[cfg(debug_assertions)]&lt;/code&gt; 和 &lt;code&gt;#[cfg(not(debug_assertions))]&lt;/code&gt; 来控制&lt;/p&gt;
+&lt;p&gt;Reference: &lt;a href=&#34;https://doc.rust-lang.org/reference/conditional-compilation.html#debug_assertions&#34; target=&#34;_blank&#34;&gt;https://doc.rust-lang.org/reference/conditional-compilation.html#debug_assertions&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 Docker 中使用 rust-nightly toolchain 构建</title>
+      <link>https://sslime336.github.io/post/docker-note1/</link>
+      <pubDate>Thu, 01 Jun 2023 09:13:32 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/docker-note1/</guid>
+      <description>&lt;p&gt;一般来说，Rust 的 Docker 镜像可以选择 &lt;a href=&#34;https://hub.docker.com/_/rust&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;rust:latest&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但是这并没有提供 rust-nightly 的环境，解决办法有两个:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>tokio tracing</title>
+      <link>https://sslime336.github.io/post/tracing-subscriber/</link>
+      <pubDate>Wed, 31 May 2023 16:34:36 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/tracing-subscriber/</guid>
+      <description>&lt;p&gt;本文简单总结了 &lt;code&gt;tracing&lt;/code&gt; 和 &lt;code&gt;tracing-subscriber&lt;/code&gt; 的使用，详细内容请参阅官方文档:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tracing&lt;/code&gt;: &lt;a href=&#34;https://docs.rs/tracing/latest/tracing/index.html&#34; target=&#34;_blank&#34;&gt;https://docs.rs/tracing/latest/tracing/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tracing-subscriber&lt;/code&gt;: &lt;a href=&#34;https://docs.rs/tracing-subscriber/latest/tracing_subscriber/&#34; target=&#34;_blank&#34;&gt;https://docs.rs/tracing-subscriber/latest/tracing_subscriber/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.rs/tracing/latest/tracing/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tracing&lt;/code&gt;&lt;/a&gt; 是一个由 &lt;a href=&#34;https://github.com/tokio-rs&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;tokio&lt;/code&gt;&lt;/a&gt; 开发并维护
+的框架，这个框架用于对 Rust 程序进行检测，收集结构化、事件驱动的诊断信息。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;部分翻译自: &lt;a href=&#34;https://github.com/tokio-rs/tracing#overview&#34; target=&#34;_blank&#34;&gt;https://github.com/tokio-rs/tracing#overview&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

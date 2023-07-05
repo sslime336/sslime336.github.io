@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nim on 杂鱼_zaYu</title>
+    <link>https://sslime336.github.io/tags/nim/</link>
+    <description>Recent content in nim on 杂鱼_zaYu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Jun 2023 12:46:10 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/nim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nim 不可变参数传递的优化</title>
+      <link>https://sslime336.github.io/post/nim-notes2/</link>
+      <pubDate>Fri, 02 Jun 2023 12:46:10 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/nim-notes2/</guid>
+      <description>&lt;p&gt;这个问题主要涉及到函数传值，但具体是传值还是传引用对于 Nim 来说并不好说，编译器会尽量采用更高效的方式&lt;/p&gt;
+&lt;p&gt;如果选用不同的 GC 策略，那么可能又是另一回事(比如 ARC/ORC 可能根据上下文来说就是移动语义)&lt;/p&gt;
+&lt;p&gt;这里只简单的考虑&lt;del&gt;非常普通的&lt;/del&gt;参数传递情况&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

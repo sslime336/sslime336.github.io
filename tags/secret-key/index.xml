@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>secret-key on 杂鱼_zaYu</title>
+    <link>https://sslime336.github.io/tags/secret-key/</link>
+    <description>Recent content in secret-key on 杂鱼_zaYu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 May 2023 13:37:31 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/secret-key/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Privacy-Enhanced Mail</title>
+      <link>https://sslime336.github.io/post/what-is-pem/</link>
+      <pubDate>Wed, 31 May 2023 13:37:31 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/what-is-pem/</guid>
+      <description>&lt;p&gt;Privacy-Enhanced Mail 即 &lt;code&gt;.pem&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;*.pem&lt;/code&gt; 指的是一种采用 base64 编码的文本文件，该后缀文件通常用于存放证书或秘钥， 后两者可
+单独分开存放也可放在一起&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

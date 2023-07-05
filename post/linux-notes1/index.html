@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.115.1">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon-16x16.png" />
+<link rel="manifest" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/site.webmanifest" />
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/safari-pinned-tab.svg" color="#8aa2d3" />
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/amzrk2/cdn-stcapi@1/favicons/favicon.ico" />
+<meta name="theme-color" content="#ffffff" />
+
+
+<title>Linux 小记(一) - 杂鱼_zaYu</title>
+
+
+<meta name="author" content="sslime336" />
+
+
+<meta name="description" content="A minimal Hugo theme with nice theme color." />
+
+
+<meta name="keywords" content="notes, linux" />
+
+
+<meta property="og:title" content="Linux 小记(一)" />
+<meta name="twitter:title" content="Linux 小记(一)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sslime336.github.io/post/linux-notes1/" /><meta property="og:description" content="Linux 备忘录(bushi)" />
+<meta name="twitter:description" content="Linux 备忘录(bushi)" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="article:published_time" content="2023-06-04T13:02:09+08:00" /><meta property="article:modified_time" content="2023-06-04T13:02:09+08:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://sslime336.github.io/assets/css/fuji.min.b4a21b5d3eb1d0a51297e31230a65fc25e387843e45ec3a2d9176cd8d163c216d99b9b13a618b28f537c3b559ec8a408183b0fbfad48daddb9befa7d3ef90eed.css" integrity="sha512-tKIbXT6x0KUSl&#43;MSMKZfwl44eEPkXsOi2Rds2NFjwhbZm5sTphiyj1N8O1WeyKQIGDsPv61I2t25vvp9PvkO7Q==" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='true'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://sslime336.github.io/">杂鱼_zaYu</a>
+            
+            <span class="title-sub">Nichts ist wahr, Alles ist erlaubt</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://sslime336.github.io/post/linux-notes1/">Linux 小记(一)</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-06-04</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1596 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/notes">notes</a>&nbsp;<a href="/tags/linux">linux</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>Linux 备忘录(bushi)</p>
+<h2 id="linux-各目录作用">Linux 各目录作用</h2>
+<p><em>摘录自: <a href="https://www.runoob.com/linux/linux-system-contents.html" target="_blank">https://www.runoob.com/linux/linux-system-contents.html</a></em></p>
+<ul>
+<li>
+<p>/bin:</p>
+<p>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p>
+</li>
+<li>
+<p>/boot:</p>
+<p>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p>
+</li>
+<li>
+<p>/dev :</p>
+<p>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p>
+</li>
+<li>
+<p>/etc:</p>
+<p>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p>
+</li>
+<li>
+<p>/home:</p>
+<p>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p>
+</li>
+<li>
+<p>/lib:</p>
+<p>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p>
+</li>
+<li>
+<p>/lost+found:</p>
+<p>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p>
+</li>
+<li>
+<p>/media:</p>
+<p>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p>
+</li>
+<li>
+<p>/mnt:</p>
+<p>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 - /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</p>
+</li>
+<li>
+<p>/opt:</p>
+<p>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p>
+</li>
+<li>
+<p>/proc:</p>
+<p>proc 是 Processes(进程) 的缩写，- /proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。</p>
+<p>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器:</p>
+<pre><code class="language-shell">echo 1 &gt; - /proc/sys/net/ipv4/icmp_echo_ignore_all
+</code></pre>
+</li>
+<li>
+<p>/root:</p>
+<p>该目录为系统管理员，也称作超级权限者的用户主目录。</p>
+</li>
+<li>
+<p>/sbin:</p>
+<p>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p>
+</li>
+<li>
+<p>/selinux:</p>
+<p>这个目录是 Redhat- /CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p>
+</li>
+<li>
+<p>/srv:</p>
+<p>该目录存放一些服务启动之后需要提取的数据。</p>
+</li>
+<li>
+<p>/sys:</p>
+<p>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。</p>
+<p>sysfs 文件系统集成了下面3种文件系统的信息:针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。</p>
+<p>该文件系统是内核设备树的一个直观反映。</p>
+<p>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p>
+</li>
+<li>
+<p>/tmp:</p>
+<p>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p>
+</li>
+<li>
+<p>/usr:</p>
+<p>usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p>
+</li>
+<li>
+<p>/usr/bin:</p>
+<p>系统用户使用的应用程序。</p>
+</li>
+<li>
+<p>/usr/sbin:</p>
+<p>超级用户使用的比较高级的管理程序和系统守护程序。</p>
+</li>
+<li>
+<p>/usr/src:</p>
+<p>内核源代码默认的放置目录。</p>
+</li>
+<li>
+<p>/var:</p>
+<p>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+</li>
+<li>
+<p>/run:</p>
+<p>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p>
+<p>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</p>
+</li>
+<li>
+<p>/etc:</p>
+<p>上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p>
+</li>
+<li>
+<p>/var:</p>
+<p>这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 /var/log 目录下，另外 mail 的预设放置也是在这里</p>
+</li>
+</ul>
+<p>/bin, /sbin, /usr/bin, /usr/sbin: 这是系统预设的执行文件的放置目录，比如 ls 就是在 /bin/ls 目录下的。</p>
+<p>值得提出的是 /bin、/usr/bin 是给系统用户使用的指令（除 root 外的通用用户），而/sbin, /usr/sbin 则是给 root 使用的指令。</p>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>除特殊注明部分，本站内容采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a> 进行许可。</p>
+    </blockquote>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux-各目录作用">Linux 各目录作用</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>页面</h3>
+        <ul>
+            
+            <li>
+                <a href="/">主页</a>
+            </li>
+            
+            <li>
+                <a href="/archives/">归档</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+            <li>
+                <a href="/search/">站内搜索</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>链接</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/sslime336" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>标签</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/__fastcall/">__fastcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/__stdcall/">__stdcall</a>
+            </span>
+            
+            <span>
+                <a href="/tags/certificate/">certificate</a>
+            </span>
+            
+            <span>
+                <a href="/tags/code-completion/">code-completion</a>
+            </span>
+            
+            <span>
+                <a href="/tags/docker/">docker</a>
+            </span>
+            
+            <span>
+                <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/file-extension/">file-extension</a>
+            </span>
+            
+            <span>
+                <a href="/tags/git/">git</a>
+            </span>
+            
+            <span>
+                <a href="/tags/gnu-nano/">GNU nano</a>
+            </span>
+            
+            <span>
+                <a href="/tags/intro/">intro</a>
+            </span>
+            
+            <span>
+                <a href="/tags/link/">link</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linkage/">linkage</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linux/">linux</a>
+            </span>
+            
+            <span>
+                <a href="/tags/memory-order/">memory order</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nightly/">nightly</a>
+            </span>
+            
+            <span>
+                <a href="/tags/nim/">nim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/notes/">notes</a>
+            </span>
+            
+            <span>
+                <a href="/tags/rust/">rust</a>
+            </span>
+            
+            <span>
+                <a href="/tags/secret-key/">secret-key</a>
+            </span>
+            
+            <span>
+                <a href="/tags/termius/">termius</a>
+            </span>
+            
+            <span>
+                <a href="/tags/todo/">todo</a>
+            </span>
+            
+            <span>
+                <a href="/tags/tokio/">tokio</a>
+            </span>
+            
+            <span>
+                <a href="/tags/trace/">trace</a>
+            </span>
+            
+            <span>
+                <a href="/tags/unstable/">unstable</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vi/vim/">vi/vim</a>
+            </span>
+            
+            <span>
+                <a href="/tags/vscode/">vscode</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>目录</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux-各目录作用">Linux 各目录作用</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2023-2023
+                <a href="https://sslime336.github.io/">sslime336</a>
+                 | <a href="https://github.com/sslime336/sslime336.github.io/tree/hugo">Source code</a> 
+                | 基于 <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 构建
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S+Yti0U7QtuZvQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js" integrity="sha512-LCKPTo0gtJ74zCNMbWw04ltmujpzSR4oW+fgN+Y1YclhM5ZrHCZQAJE4quEodcI/G122sRhSGU2BsSRUZ2Gu3w==" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-GP4x8UWxWyh4BMbyJGOGneiTbkrWEF5izsVJByzVLodP8CuJH/n936+yQDMJJrOPUHLgyPbLiGw2rXmdvGdXHA==" crossorigin="anonymous"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.645f1123be695831f419ab54c1bcba327325895c740014006e57070d4f3e5d6b553e929c4b46f40ea707249e9c7f7c2a446d32a39ce7319f80a34525586a8e0f.js" integrity="sha512-ZF8RI75pWDH0GatUwby6MnMliVx0ABQAblcHDU8&#43;XWtVPpKcS0b0DqcHJJ6cf3wqRG0yo5znMZ&#43;Ao0UlWGqODw=="></script>
+
+
+
+</body>
+
+</html>

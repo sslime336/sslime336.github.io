@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 杂鱼_zaYu</title>
+    <link>https://sslime336.github.io/tags/linux/</link>
+    <description>Recent content in linux on 杂鱼_zaYu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Jun 2023 13:02:09 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 小记(一)</title>
+      <link>https://sslime336.github.io/post/linux-notes1/</link>
+      <pubDate>Sun, 04 Jun 2023 13:02:09 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/linux-notes1/</guid>
+      <description>&lt;p&gt;Linux 备忘录(bushi)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
