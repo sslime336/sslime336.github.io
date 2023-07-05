@@ -10,10 +10,10 @@ jobs:
     name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Check out source code on branch hugo
+      - name: Check out source code on branch master
         uses: actions/checkout@v3
         with:
-          ref: hugo
+          ref: master
           submodules: recursive # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Setup Hugo
