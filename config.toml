@@ -1,4 +1,4 @@
-baseURL = "https://sslime336.github.io/"
+baseURL = "https://sslime336.github.io/blog"
 title = "杂鱼_zaYu"
 
 theme = "fuji"
@@ -36,7 +36,7 @@ subTitle = "Nichts ist wahr, Alles ist erlaubt"
 defaultTheme = "auto"              # default theme when first visit (auto|dark|light)
 
 # Source URL of the website, will appear in the footer
-sourceURL = "https://github.com/sslime336/sslime336.github.io/tree/hugo"
+sourceURL = "https://github.com/sslime336/sslime336.github.io/"
 
 # Use CloudFlare Workers to accelerate the Google Analytics
 # If you are using this please comment the googleAnalytics above
