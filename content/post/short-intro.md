@@ -99,3 +99,5 @@ jobs:
 - 处理 `deploy_key`, [点我查看](https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-create-ssh-deploy-key)
 
 5. `git add . && git commit -m "xxx" && git push -set-upstream origin hugo`
+
+## *当然还是建议主分支写东西然后部署到 `gh-pages` 分支*
