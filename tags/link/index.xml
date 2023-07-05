@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>link on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/tags/link/</link>
+    <link>https://sslime336.github.io/tags/link/</link>
     <description>Recent content in link on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Jul 2023 12:20:54 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/link/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jul 2023 12:20:54 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/link/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust 中的链接 #[linkage = &#34;xxx&#34;]</title>
-      <link>https://sslime336.github.io/blog/post/linkage-feature-in-rust/</link>
+      <link>https://sslime336.github.io/post/linkage-feature-in-rust/</link>
       <pubDate>Wed, 05 Jul 2023 12:20:54 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/linkage-feature-in-rust/</guid>
+      <guid>https://sslime336.github.io/post/linkage-feature-in-rust/</guid>
       <description>&lt;p&gt;Rust 中有一个方便的注解 &lt;code&gt;#[linkage]&lt;/code&gt;，这是一个不稳定的 feature，网上关于它的
 信息基本找不到，在我搜索半天后，在 Github 上找到了一个 tracking issue:
 &lt;a href=&#34;https://github.com/rust-lang/rust/issues/29603&#34; target=&#34;_blank&#34;&gt;rust-lang/rust issue#29603&lt;/a&gt;&lt;/p&gt;</description>

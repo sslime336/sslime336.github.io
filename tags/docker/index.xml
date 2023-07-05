@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/tags/docker/</link>
+    <link>https://sslime336.github.io/tags/docker/</link>
     <description>Recent content in docker on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Jul 2023 15:54:11 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jul 2023 15:54:11 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker 使用 WSL2 吃满 C 盘空间</title>
-      <link>https://sslime336.github.io/blog/post/docker-in-disk-c/</link>
+      <link>https://sslime336.github.io/post/docker-in-disk-c/</link>
       <pubDate>Tue, 04 Jul 2023 15:54:11 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/docker-in-disk-c/</guid>
+      <guid>https://sslime336.github.io/post/docker-in-disk-c/</guid>
       <description>&lt;p&gt;docker 现在默认使用 wsl2，但是这里的 wsl2 并不是用户自己安装的，而是 docker 自己安装的&lt;/p&gt;
 &lt;p&gt;而 docker 自己安装的 wsl2 会默认放在 C 盘，所以我们需要手动做一下迁移防止 C 盘爆炸&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>在 Docker 中使用 rust-nightly toolchain 构建</title>
-      <link>https://sslime336.github.io/blog/post/docker-note1/</link>
+      <link>https://sslime336.github.io/post/docker-note1/</link>
       <pubDate>Thu, 01 Jun 2023 09:13:32 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/docker-note1/</guid>
+      <guid>https://sslime336.github.io/post/docker-note1/</guid>
       <description>&lt;p&gt;一般来说，Rust 的 Docker 镜像可以选择 &lt;a href=&#34;https://hub.docker.com/_/rust&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;rust:latest&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;但是这并没有提供 rust-nightly 的环境，解决办法有两个:&lt;/p&gt;</description>
     </item>

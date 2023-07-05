@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nightly on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/tags/nightly/</link>
+    <link>https://sslime336.github.io/tags/nightly/</link>
     <description>Recent content in nightly on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Jun 2023 09:13:32 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/nightly/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jun 2023 09:13:32 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/nightly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 Docker 中使用 rust-nightly toolchain 构建</title>
-      <link>https://sslime336.github.io/blog/post/docker-note1/</link>
+      <link>https://sslime336.github.io/post/docker-note1/</link>
       <pubDate>Thu, 01 Jun 2023 09:13:32 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/docker-note1/</guid>
+      <guid>https://sslime336.github.io/post/docker-note1/</guid>
       <description>&lt;p&gt;一般来说，Rust 的 Docker 镜像可以选择 &lt;a href=&#34;https://hub.docker.com/_/rust&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;rust:latest&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;但是这并没有提供 rust-nightly 的环境，解决办法有两个:&lt;/p&gt;</description>
     </item>

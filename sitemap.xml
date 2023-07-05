@@ -2,139 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sslime336.github.io/blog/tags/__fastcall/</loc>
+    <loc>https://sslime336.github.io/tags/__fastcall/</loc>
     <lastmod>2023-07-05T12:29:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/__stdcall/</loc>
+    <loc>https://sslime336.github.io/tags/__stdcall/</loc>
     <lastmod>2023-07-05T12:29:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/</loc>
+    <loc>https://sslime336.github.io/post/</loc>
     <lastmod>2023-07-05T12:29:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/func-call-convention/</loc>
+    <loc>https://sslime336.github.io/post/func-call-convention/</loc>
     <lastmod>2023-07-05T12:29:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/</loc>
+    <loc>https://sslime336.github.io/</loc>
     <lastmod>2023-07-05T12:29:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/link/</loc>
+    <loc>https://sslime336.github.io/tags/link/</loc>
     <lastmod>2023-07-05T12:20:54+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/linkage/</loc>
+    <loc>https://sslime336.github.io/tags/linkage/</loc>
     <lastmod>2023-07-05T12:20:54+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/rust/</loc>
+    <loc>https://sslime336.github.io/tags/rust/</loc>
     <lastmod>2023-07-05T12:20:54+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/linkage-feature-in-rust/</loc>
+    <loc>https://sslime336.github.io/post/linkage-feature-in-rust/</loc>
     <lastmod>2023-07-05T12:20:54+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/unstable/</loc>
+    <loc>https://sslime336.github.io/tags/unstable/</loc>
     <lastmod>2023-07-05T12:20:54+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/docker/</loc>
+    <loc>https://sslime336.github.io/tags/docker/</loc>
     <lastmod>2023-07-04T15:54:11+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/docker-in-disk-c/</loc>
+    <loc>https://sslime336.github.io/post/docker-in-disk-c/</loc>
     <lastmod>2023-07-04T15:54:11+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/start-nim-all-in-one/</loc>
+    <loc>https://sslime336.github.io/post/start-nim-all-in-one/</loc>
     <lastmod>2023-06-28T11:54:18+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/memory-order/</loc>
+    <loc>https://sslime336.github.io/tags/memory-order/</loc>
     <lastmod>2023-06-13T20:53:27+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/memory-order/</loc>
+    <loc>https://sslime336.github.io/post/memory-order/</loc>
     <lastmod>2023-06-13T20:53:27+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/todo/</loc>
+    <loc>https://sslime336.github.io/tags/todo/</loc>
     <lastmod>2023-06-13T20:53:27+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/rust-notes1/</loc>
+    <loc>https://sslime336.github.io/post/rust-notes1/</loc>
     <lastmod>2023-06-13T20:47:49+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/code-completion/</loc>
+    <loc>https://sslime336.github.io/tags/code-completion/</loc>
     <lastmod>2023-06-05T20:52:42+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/vscode/</loc>
+    <loc>https://sslime336.github.io/tags/vscode/</loc>
     <lastmod>2023-06-05T20:52:42+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/vsc-tab-completiom/</loc>
+    <loc>https://sslime336.github.io/post/vsc-tab-completiom/</loc>
     <lastmod>2023-06-05T20:52:42+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/git/</loc>
+    <loc>https://sslime336.github.io/tags/git/</loc>
     <lastmod>2023-06-04T13:12:45+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/gnu-nano/</loc>
+    <loc>https://sslime336.github.io/tags/gnu-nano/</loc>
     <lastmod>2023-06-04T13:12:45+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/change-git-default-editor/</loc>
+    <loc>https://sslime336.github.io/post/change-git-default-editor/</loc>
     <lastmod>2023-06-04T13:12:45+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/linux/</loc>
+    <loc>https://sslime336.github.io/tags/linux/</loc>
     <lastmod>2023-06-04T13:02:09+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/linux-notes1/</loc>
+    <loc>https://sslime336.github.io/post/linux-notes1/</loc>
     <lastmod>2023-06-04T13:02:09+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/notes/</loc>
+    <loc>https://sslime336.github.io/tags/notes/</loc>
     <lastmod>2023-06-04T13:02:09+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/nim/</loc>
+    <loc>https://sslime336.github.io/tags/nim/</loc>
     <lastmod>2023-06-02T12:46:10+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/nim-notes2/</loc>
+    <loc>https://sslime336.github.io/post/nim-notes2/</loc>
     <lastmod>2023-06-02T12:46:10+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/dockerfile/</loc>
+    <loc>https://sslime336.github.io/tags/dockerfile/</loc>
     <lastmod>2023-06-01T09:13:32+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/nightly/</loc>
+    <loc>https://sslime336.github.io/tags/nightly/</loc>
     <lastmod>2023-06-01T09:13:32+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/docker-note1/</loc>
+    <loc>https://sslime336.github.io/post/docker-note1/</loc>
     <lastmod>2023-06-01T09:13:32+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/termius/</loc>
+    <loc>https://sslime336.github.io/tags/termius/</loc>
     <lastmod>2023-05-31T20:39:49+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/termius-notes1/</loc>
+    <loc>https://sslime336.github.io/post/termius-notes1/</loc>
     <lastmod>2023-05-31T20:39:49+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/tokio/</loc>
+    <loc>https://sslime336.github.io/tags/tokio/</loc>
     <lastmod>2023-05-31T16:34:36+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/tracing-subscriber/</loc>
+    <loc>https://sslime336.github.io/post/tracing-subscriber/</loc>
     <lastmod>2023-05-31T16:34:36+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/trace/</loc>
+    <loc>https://sslime336.github.io/tags/trace/</loc>
     <lastmod>2023-05-31T16:34:36+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/certificate/</loc>
+    <loc>https://sslime336.github.io/tags/certificate/</loc>
     <lastmod>2023-05-31T13:37:31+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/file-extension/</loc>
+    <loc>https://sslime336.github.io/tags/file-extension/</loc>
     <lastmod>2023-05-31T13:37:31+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/what-is-pem/</loc>
+    <loc>https://sslime336.github.io/post/what-is-pem/</loc>
     <lastmod>2023-05-31T13:37:31+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/secret-key/</loc>
+    <loc>https://sslime336.github.io/tags/secret-key/</loc>
     <lastmod>2023-05-31T13:37:31+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/intro/</loc>
+    <loc>https://sslime336.github.io/tags/intro/</loc>
     <lastmod>2023-05-30T15:11:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/post/short-intro/</loc>
+    <loc>https://sslime336.github.io/post/short-intro/</loc>
     <lastmod>2023-05-30T15:11:14+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/about/</loc>
+    <loc>https://sslime336.github.io/about/</loc>
     <lastmod>2023-05-30T14:42:47+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/blog/archives/</loc>
+    <loc>https://sslime336.github.io/archives/</loc>
   </url><url>
-    <loc>https://sslime336.github.io/blog/search/</loc>
+    <loc>https://sslime336.github.io/search/</loc>
   </url><url>
-    <loc>https://sslime336.github.io/blog/tags/vi/vim/</loc>
+    <loc>https://sslime336.github.io/tags/vi/vim/</loc>
   </url>
 </urlset>

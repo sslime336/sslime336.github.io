@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>todo on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/tags/todo/</link>
+    <link>https://sslime336.github.io/tags/todo/</link>
     <description>Recent content in todo on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jun 2023 20:53:27 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/todo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 20:53:27 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/todo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust Memory Ordering</title>
-      <link>https://sslime336.github.io/blog/post/memory-order/</link>
+      <link>https://sslime336.github.io/post/memory-order/</link>
       <pubDate>Tue, 13 Jun 2023 20:53:27 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/memory-order/</guid>
+      <guid>https://sslime336.github.io/post/memory-order/</guid>
       <description>&lt;p&gt;首先要说的是，内存排序相对来说比较底层，对于不同的 CPU 硬件设计都有可能不同&lt;/p&gt;
 &lt;p&gt;Memory Ordering 针对的是多核(多线程)原子操作的内存连续性(Coherence)和一致性(Consitency)问题&lt;/p&gt;
 &lt;ul&gt;

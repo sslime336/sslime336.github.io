@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vscode on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/tags/vscode/</link>
+    <link>https://sslime336.github.io/tags/vscode/</link>
     <description>Recent content in vscode on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Jun 2023 20:52:42 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jun 2023 20:52:42 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VSCode tab completion</title>
-      <link>https://sslime336.github.io/blog/post/vsc-tab-completiom/</link>
+      <link>https://sslime336.github.io/post/vsc-tab-completiom/</link>
       <pubDate>Mon, 05 Jun 2023 20:52:42 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/vsc-tab-completiom/</guid>
+      <guid>https://sslime336.github.io/post/vsc-tab-completiom/</guid>
       <description>&lt;p&gt;今天在写汇编的时候发现我的 VSC 出现了一种恶心的 tab 补全现象&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-asm&#34;&gt;TABLE:  
 	DB 3FH,06H,5BH,4FH,66H     ; 0  1   2   3   4

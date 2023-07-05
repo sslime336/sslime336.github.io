@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/</link>
+    <link>https://sslime336.github.io/</link>
     <description>Recent content on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Jul 2023 12:29:14 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jul 2023 12:29:14 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>函数调用约定</title>
-      <link>https://sslime336.github.io/blog/post/func-call-convention/</link>
+      <link>https://sslime336.github.io/post/func-call-convention/</link>
       <pubDate>Wed, 05 Jul 2023 12:29:14 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/func-call-convention/</guid>
+      <guid>https://sslime336.github.io/post/func-call-convention/</guid>
       <description>&lt;p&gt;函数的调用约定包括了函数的参数如何被压入栈中、函数调用后由谁来恢复堆栈等问题&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Rust 中的链接 #[linkage = &#34;xxx&#34;]</title>
-      <link>https://sslime336.github.io/blog/post/linkage-feature-in-rust/</link>
+      <link>https://sslime336.github.io/post/linkage-feature-in-rust/</link>
       <pubDate>Wed, 05 Jul 2023 12:20:54 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/linkage-feature-in-rust/</guid>
+      <guid>https://sslime336.github.io/post/linkage-feature-in-rust/</guid>
       <description>&lt;p&gt;Rust 中有一个方便的注解 &lt;code&gt;#[linkage]&lt;/code&gt;，这是一个不稳定的 feature，网上关于它的
 信息基本找不到，在我搜索半天后，在 Github 上找到了一个 tracking issue:
 &lt;a href=&#34;https://github.com/rust-lang/rust/issues/29603&#34; target=&#34;_blank&#34;&gt;rust-lang/rust issue#29603&lt;/a&gt;&lt;/p&gt;</description>
@@ -29,29 +29,29 @@
     
     <item>
       <title>Docker 使用 WSL2 吃满 C 盘空间</title>
-      <link>https://sslime336.github.io/blog/post/docker-in-disk-c/</link>
+      <link>https://sslime336.github.io/post/docker-in-disk-c/</link>
       <pubDate>Tue, 04 Jul 2023 15:54:11 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/docker-in-disk-c/</guid>
+      <guid>https://sslime336.github.io/post/docker-in-disk-c/</guid>
       <description>&lt;p&gt;docker 现在默认使用 wsl2，但是这里的 wsl2 并不是用户自己安装的，而是 docker 自己安装的&lt;/p&gt;
 &lt;p&gt;而 docker 自己安装的 wsl2 会默认放在 C 盘，所以我们需要手动做一下迁移防止 C 盘爆炸&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nim 一本通(bushi)</title>
-      <link>https://sslime336.github.io/blog/post/start-nim-all-in-one/</link>
+      <link>https://sslime336.github.io/post/start-nim-all-in-one/</link>
       <pubDate>Wed, 28 Jun 2023 11:54:18 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/start-nim-all-in-one/</guid>
+      <guid>https://sslime336.github.io/post/start-nim-all-in-one/</guid>
       <description>&lt;p&gt;本文假定您对 &lt;a href=&#34;https://nim-lang.org/&#34; target=&#34;_blank&#34;&gt;Nim&lt;/a&gt; 已经有一定的了解，本文并非零基础教程&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Rust Memory Ordering</title>
-      <link>https://sslime336.github.io/blog/post/memory-order/</link>
+      <link>https://sslime336.github.io/post/memory-order/</link>
       <pubDate>Tue, 13 Jun 2023 20:53:27 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/memory-order/</guid>
+      <guid>https://sslime336.github.io/post/memory-order/</guid>
       <description>&lt;p&gt;首先要说的是，内存排序相对来说比较底层，对于不同的 CPU 硬件设计都有可能不同&lt;/p&gt;
 &lt;p&gt;Memory Ordering 针对的是多核(多线程)原子操作的内存连续性(Coherence)和一致性(Consitency)问题&lt;/p&gt;
 &lt;ul&gt;
@@ -62,20 +62,20 @@
     
     <item>
       <title>Rust 配置在 debug/release 构建中的不同表现</title>
-      <link>https://sslime336.github.io/blog/post/rust-notes1/</link>
+      <link>https://sslime336.github.io/post/rust-notes1/</link>
       <pubDate>Tue, 13 Jun 2023 20:47:49 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/rust-notes1/</guid>
+      <guid>https://sslime336.github.io/post/rust-notes1/</guid>
       <description>&lt;p&gt;可以通过 &lt;code&gt;#[cfg(debug_assertions)]&lt;/code&gt; 和 &lt;code&gt;#[cfg(not(debug_assertions))]&lt;/code&gt; 来控制&lt;/p&gt;
 &lt;p&gt;Reference: &lt;a href=&#34;https://doc.rust-lang.org/reference/conditional-compilation.html#debug_assertions&#34; target=&#34;_blank&#34;&gt;https://doc.rust-lang.org/reference/conditional-compilation.html#debug_assertions&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>VSCode tab completion</title>
-      <link>https://sslime336.github.io/blog/post/vsc-tab-completiom/</link>
+      <link>https://sslime336.github.io/post/vsc-tab-completiom/</link>
       <pubDate>Mon, 05 Jun 2023 20:52:42 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/vsc-tab-completiom/</guid>
+      <guid>https://sslime336.github.io/post/vsc-tab-completiom/</guid>
       <description>&lt;p&gt;今天在写汇编的时候发现我的 VSC 出现了一种恶心的 tab 补全现象&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-asm&#34;&gt;TABLE:  
 	DB 3FH,06H,5BH,4FH,66H     ; 0  1   2   3   4
@@ -88,29 +88,29 @@
     
     <item>
       <title>更改 git 默认编辑器</title>
-      <link>https://sslime336.github.io/blog/post/change-git-default-editor/</link>
+      <link>https://sslime336.github.io/post/change-git-default-editor/</link>
       <pubDate>Sun, 04 Jun 2023 13:12:45 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/change-git-default-editor/</guid>
+      <guid>https://sslime336.github.io/post/change-git-default-editor/</guid>
       <description>&lt;p&gt;在 &lt;code&gt;git commit&lt;/code&gt; 的时候，默认的编辑器是 &lt;a href=&#34;https://www.nano-editor.org/&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;GNU nano&lt;/code&gt;&lt;/a&gt;，但对于重度 &lt;code&gt;vim&lt;/code&gt; 用户来说，还是 &lt;code&gt;vim&lt;/code&gt; 用的顺手(x)&lt;/p&gt;
 &lt;p&gt;这时候可以通过 &lt;code&gt;git config --global core.editor vi&lt;/code&gt; 来修改全局默认的 commit 编辑器&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Linux 小记(一)</title>
-      <link>https://sslime336.github.io/blog/post/linux-notes1/</link>
+      <link>https://sslime336.github.io/post/linux-notes1/</link>
       <pubDate>Sun, 04 Jun 2023 13:02:09 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/linux-notes1/</guid>
+      <guid>https://sslime336.github.io/post/linux-notes1/</guid>
       <description>&lt;p&gt;Linux 备忘录(bushi)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nim 不可变参数传递的优化</title>
-      <link>https://sslime336.github.io/blog/post/nim-notes2/</link>
+      <link>https://sslime336.github.io/post/nim-notes2/</link>
       <pubDate>Fri, 02 Jun 2023 12:46:10 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/nim-notes2/</guid>
+      <guid>https://sslime336.github.io/post/nim-notes2/</guid>
       <description>&lt;p&gt;这个问题主要涉及到函数传值，但具体是传值还是传引用对于 Nim 来说并不好说，编译器会尽量采用更高效的方式&lt;/p&gt;
 &lt;p&gt;如果选用不同的 GC 策略，那么可能又是另一回事(比如 ARC/ORC 可能根据上下文来说就是移动语义)&lt;/p&gt;
 &lt;p&gt;这里只简单的考虑&lt;del&gt;非常普通的&lt;/del&gt;参数传递情况&lt;/p&gt;</description>
@@ -118,29 +118,29 @@
     
     <item>
       <title>在 Docker 中使用 rust-nightly toolchain 构建</title>
-      <link>https://sslime336.github.io/blog/post/docker-note1/</link>
+      <link>https://sslime336.github.io/post/docker-note1/</link>
       <pubDate>Thu, 01 Jun 2023 09:13:32 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/docker-note1/</guid>
+      <guid>https://sslime336.github.io/post/docker-note1/</guid>
       <description>&lt;p&gt;一般来说，Rust 的 Docker 镜像可以选择 &lt;a href=&#34;https://hub.docker.com/_/rust&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;rust:latest&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;但是这并没有提供 rust-nightly 的环境，解决办法有两个:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>禁用 Termius PC hotkeys</title>
-      <link>https://sslime336.github.io/blog/post/termius-notes1/</link>
+      <link>https://sslime336.github.io/post/termius-notes1/</link>
       <pubDate>Wed, 31 May 2023 20:39:49 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/termius-notes1/</guid>
+      <guid>https://sslime336.github.io/post/termius-notes1/</guid>
       <description>&lt;p&gt;最近搞了个 Termius，但是发现一些快捷键被它吞了？！而不是发送到服务器的 shell 上&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>tokio tracing</title>
-      <link>https://sslime336.github.io/blog/post/tracing-subscriber/</link>
+      <link>https://sslime336.github.io/post/tracing-subscriber/</link>
       <pubDate>Wed, 31 May 2023 16:34:36 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/tracing-subscriber/</guid>
+      <guid>https://sslime336.github.io/post/tracing-subscriber/</guid>
       <description>&lt;p&gt;本文简单总结了 &lt;code&gt;tracing&lt;/code&gt; 和 &lt;code&gt;tracing-subscriber&lt;/code&gt; 的使用，详细内容请参阅官方文档:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;tracing&lt;/code&gt;: &lt;a href=&#34;https://docs.rs/tracing/latest/tracing/index.html&#34; target=&#34;_blank&#34;&gt;https://docs.rs/tracing/latest/tracing/index.html&lt;/a&gt;&lt;/li&gt;
@@ -153,10 +153,10 @@
     
     <item>
       <title>Privacy-Enhanced Mail</title>
-      <link>https://sslime336.github.io/blog/post/what-is-pem/</link>
+      <link>https://sslime336.github.io/post/what-is-pem/</link>
       <pubDate>Wed, 31 May 2023 13:37:31 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/what-is-pem/</guid>
+      <guid>https://sslime336.github.io/post/what-is-pem/</guid>
       <description>&lt;p&gt;Privacy-Enhanced Mail 即 &lt;code&gt;.pem&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;*.pem&lt;/code&gt; 指的是一种采用 base64 编码的文本文件，该后缀文件通常用于存放证书或秘钥， 后两者可
 单独分开存放也可放在一起&lt;/p&gt;</description>
@@ -164,10 +164,10 @@
     
     <item>
       <title>搭建过程</title>
-      <link>https://sslime336.github.io/blog/post/short-intro/</link>
+      <link>https://sslime336.github.io/post/short-intro/</link>
       <pubDate>Tue, 30 May 2023 15:11:14 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/short-intro/</guid>
+      <guid>https://sslime336.github.io/post/short-intro/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;简单写写0 v0&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -175,10 +175,10 @@
     
     <item>
       <title>介绍一下你自己</title>
-      <link>https://sslime336.github.io/blog/about/</link>
+      <link>https://sslime336.github.io/about/</link>
       <pubDate>Tue, 30 May 2023 14:42:47 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/about/</guid>
+      <guid>https://sslime336.github.io/about/</guid>
       <description>当然！我是ChatGPT，一个基于GPT-3.5架构的语言模型，由OpenAI开发。我的目标是通过与用户的自然语言交互来提供帮助和信息。 我在训练过程中使用了大量的文本数据，涵盖了各种主题和领域，包括科</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>__stdcall on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/blog/tags/__stdcall/</link>
+    <link>https://sslime336.github.io/tags/__stdcall/</link>
     <description>Recent content in __stdcall on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Jul 2023 12:29:14 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/blog/tags/__stdcall/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Jul 2023 12:29:14 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/__stdcall/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>函数调用约定</title>
-      <link>https://sslime336.github.io/blog/post/func-call-convention/</link>
+      <link>https://sslime336.github.io/post/func-call-convention/</link>
       <pubDate>Wed, 05 Jul 2023 12:29:14 +0800</pubDate>
       
-      <guid>https://sslime336.github.io/blog/post/func-call-convention/</guid>
+      <guid>https://sslime336.github.io/post/func-call-convention/</guid>
       <description>&lt;p&gt;函数的调用约定包括了函数的参数如何被压入栈中、函数调用后由谁来恢复堆栈等问题&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
     
