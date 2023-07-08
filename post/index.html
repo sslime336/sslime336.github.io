@@ -38,7 +38,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sslime336.github.io/post/" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="og:updated_time" content="2023-07-05T14:43:44+08:00" />
+<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="og:updated_time" content="2023-07-08T21:54:35+08:00" />
 
 
 <style>
@@ -103,6 +103,26 @@
                 
 
 
+
+<div class="post">
+    <h2 class="post-item post-title">
+        <a href="https://sslime336.github.io/post/when-did-errno-been-set/">errno 到底是个啥</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-07-08</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;479 字</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/c">c</a>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/errno">errno</a>&nbsp;</span>
+
+    </div>
+    <div class="post-item post-summary markdown-body">
+        <p>我们都知道 errno，是存放系统调用错误的地方，其位于 <code>&lt;errno.h&gt;</code> 中，但是
+它到底是怎么来的？系统是在什么时候设置的这个值的？毕竟系统调用 <code>syscall</code> 只会返回 -1 来表示当前系统调用出错……</p>
+<p>实际上，在使用系统调用的时候，我们通过一系列 syscall 获取的返回值是已经被 <code>libc</code>
+覆写过的了</p>
+    </div>
+</div>
 
 <div class="post">
     <h2 class="post-item post-title">
@@ -273,23 +293,6 @@
 <p>这时候可以通过 <code>git config --global core.editor vi</code> 来修改全局默认的 commit 编辑器</p>
     </div>
 </div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://sslime336.github.io/post/linux-notes1/">Linux 小记(一)</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-06-04</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1596 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/notes">notes</a>&nbsp;<a href="/tags/linux">linux</a>&nbsp;</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <p>Linux 备忘录(bushi)</p>
-    </div>
-</div>
 <div class="pagination"><div class="pag-item pag-current">
     <a href="/post/">1</a>
   </div><div class="pag-item">
@@ -349,6 +352,10 @@
             </span>
             
             <span>
+                <a href="/tags/c/">c</a>
+            </span>
+            
+            <span>
                 <a href="/tags/certificate/">certificate</a>
             </span>
             
@@ -362,6 +369,10 @@
             
             <span>
                 <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/errno/">errno</a>
             </span>
             
             <span>
@@ -517,6 +528,10 @@
             </span>
             
             <span>
+                <a href="/tags/c/">c</a>
+            </span>
+            
+            <span>
                 <a href="/tags/certificate/">certificate</a>
             </span>
             
@@ -530,6 +545,10 @@
             
             <span>
                 <a href="/tags/dockerfile/">Dockerfile</a>
+            </span>
+            
+            <span>
+                <a href="/tags/errno/">errno</a>
             </span>
             
             <span>

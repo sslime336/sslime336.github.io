@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#ffffff" />
 
 
-<title>docker - 杂鱼_zaYu</title>
+<title>c - 杂鱼_zaYu</title>
 
 
 <meta name="author" content="sslime336" />
@@ -31,14 +31,14 @@
 <meta name="description" content="A minimal Hugo theme with nice theme color." />
 
 
-<link rel="alternate" type="application/rss+xml" href="https://sslime336.github.io/tags/docker/index.xml" title="杂鱼_zaYu" />
+<link rel="alternate" type="application/rss+xml" href="https://sslime336.github.io/tags/c/index.xml" title="杂鱼_zaYu" />
 
-<meta property="og:title" content="docker" />
-<meta name="twitter:title" content="docker" />
+<meta property="og:title" content="c" />
+<meta name="twitter:title" content="c" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://sslime336.github.io/tags/docker/" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
+<meta property="og:url" content="https://sslime336.github.io/tags/c/" /><meta property="og:image" content="https://sslime336.github.io/img/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="og:updated_time" content="2023-07-04T15:54:11+08:00" />
+<meta name="twitter:image" content="https://sslime336.github.io/img/og.png" /><meta property="og:updated_time" content="2023-07-08T21:54:35+08:00" />
 
 
 <style>
@@ -103,44 +103,28 @@
                 
 
 <div class="page-info">
-  <span>拥有标签 docker 的文章：</span>
+  <span>拥有标签 c 的文章：</span>
 </div>
 
 
 
 <div class="post">
   <h2 class="post-item post-title">
-    <a href="https://sslime336.github.io/post/docker-in-disk-c/">Docker 使用 WSL2 吃满 C 盘空间</a>
+    <a href="https://sslime336.github.io/post/when-did-errno-been-set/">errno 到底是个啥</a>
   </h2>
   <div class="post-item post-meta">
-    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-07-04</span>
+    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-07-08</span>
 
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;335 字</span>
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;479 字</span>
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/docker">docker</a>&nbsp;</span>
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/c">c</a>&nbsp;<a href="/tags/linux">linux</a>&nbsp;<a href="/tags/errno">errno</a>&nbsp;</span>
 
   </div>
   <div class="post-item post-summary markdown-body">
-    <p>docker 现在默认使用 wsl2，但是这里的 wsl2 并不是用户自己安装的，而是 docker 自己安装的</p>
-<p>而 docker 自己安装的 wsl2 会默认放在 C 盘，所以我们需要手动做一下迁移防止 C 盘爆炸</p>
-  </div>
-</div>
-
-<div class="post">
-  <h2 class="post-item post-title">
-    <a href="https://sslime336.github.io/post/docker-note1/">在 Docker 中使用 rust-nightly toolchain 构建</a>
-  </h2>
-  <div class="post-item post-meta">
-    <span><i class="iconfont icon-today-sharp"></i>&nbsp;2023-06-01</span>
-
-<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;121 字</span>
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/rust">rust</a>&nbsp;<a href="/tags/docker">docker</a>&nbsp;<a href="/tags/dockerfile">Dockerfile</a>&nbsp;<a href="/tags/nightly">nightly</a>&nbsp;</span>
-
-  </div>
-  <div class="post-item post-summary markdown-body">
-    <p>一般来说，Rust 的 Docker 镜像可以选择 <a href="https://hub.docker.com/_/rust" target="_blank"><code>rust:latest</code></a></p>
-<p>但是这并没有提供 rust-nightly 的环境，解决办法有两个:</p>
+    <p>我们都知道 errno，是存放系统调用错误的地方，其位于 <code>&lt;errno.h&gt;</code> 中，但是
+它到底是怎么来的？系统是在什么时候设置的这个值的？毕竟系统调用 <code>syscall</code> 只会返回 -1 来表示当前系统调用出错……</p>
+<p>实际上，在使用系统调用的时候，我们通过一系列 syscall 获取的返回值是已经被 <code>libc</code>
+覆写过的了</p>
   </div>
 </div>
 

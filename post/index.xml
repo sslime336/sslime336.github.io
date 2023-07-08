@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Jul 2023 14:43:44 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 21:54:35 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>errno 到底是个啥</title>
+      <link>https://sslime336.github.io/post/when-did-errno-been-set/</link>
+      <pubDate>Sat, 08 Jul 2023 21:54:35 +0800</pubDate>
+      
+      <guid>https://sslime336.github.io/post/when-did-errno-been-set/</guid>
+      <description>&lt;p&gt;我们都知道 errno，是存放系统调用错误的地方，其位于 &lt;code&gt;&amp;lt;errno.h&amp;gt;&lt;/code&gt; 中，但是
+它到底是怎么来的？系统是在什么时候设置的这个值的？毕竟系统调用 &lt;code&gt;syscall&lt;/code&gt; 只会返回 -1 来表示当前系统调用出错……&lt;/p&gt;
+&lt;p&gt;实际上，在使用系统调用的时候，我们通过一系列 syscall 获取的返回值是已经被 &lt;code&gt;libc&lt;/code&gt;
+覆写过的了&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>强制类型转换的代价</title>
       <link>https://sslime336.github.io/post/the-price-of-type-casting/</link>

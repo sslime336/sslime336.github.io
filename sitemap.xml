@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sslime336.github.io/tags/c/</loc>
+    <lastmod>2023-07-08T21:54:35+08:00</lastmod>
+  </url><url>
+    <loc>https://sslime336.github.io/tags/errno/</loc>
+    <lastmod>2023-07-08T21:54:35+08:00</lastmod>
+  </url><url>
+    <loc>https://sslime336.github.io/post/when-did-errno-been-set/</loc>
+    <lastmod>2023-07-08T21:54:35+08:00</lastmod>
+  </url><url>
+    <loc>https://sslime336.github.io/tags/linux/</loc>
+    <lastmod>2023-07-08T21:54:35+08:00</lastmod>
+  </url><url>
+    <loc>https://sslime336.github.io/post/</loc>
+    <lastmod>2023-07-08T21:54:35+08:00</lastmod>
+  </url><url>
+    <loc>https://sslime336.github.io/</loc>
+    <lastmod>2023-07-08T21:54:35+08:00</lastmod>
+  </url><url>
     <loc>https://sslime336.github.io/tags/misc/</loc>
     <lastmod>2023-07-05T14:43:44+08:00</lastmod>
   </url><url>
-    <loc>https://sslime336.github.io/post/</loc>
-    <lastmod>2023-07-05T14:43:44+08:00</lastmod>
-  </url><url>
     <loc>https://sslime336.github.io/post/the-price-of-type-casting/</loc>
-    <lastmod>2023-07-05T14:43:44+08:00</lastmod>
-  </url><url>
-    <loc>https://sslime336.github.io/</loc>
     <lastmod>2023-07-05T14:43:44+08:00</lastmod>
   </url><url>
     <loc>https://sslime336.github.io/tags/__fastcall/</loc>
@@ -76,9 +88,6 @@
   </url><url>
     <loc>https://sslime336.github.io/post/change-git-default-editor/</loc>
     <lastmod>2023-06-04T13:12:45+08:00</lastmod>
-  </url><url>
-    <loc>https://sslime336.github.io/tags/linux/</loc>
-    <lastmod>2023-06-04T13:02:09+08:00</lastmod>
   </url><url>
     <loc>https://sslime336.github.io/post/linux-notes1/</loc>
     <lastmod>2023-06-04T13:02:09+08:00</lastmod>

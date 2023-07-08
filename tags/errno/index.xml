@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on 杂鱼_zaYu</title>
-    <link>https://sslime336.github.io/tags/linux/</link>
-    <description>Recent content in linux on 杂鱼_zaYu</description>
+    <title>errno on 杂鱼_zaYu</title>
+    <link>https://sslime336.github.io/tags/errno/</link>
+    <description>Recent content in errno on 杂鱼_zaYu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Jul 2023 21:54:35 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jul 2023 21:54:35 +0800</lastBuildDate><atom:link href="https://sslime336.github.io/tags/errno/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>errno 到底是个啥</title>
       <link>https://sslime336.github.io/post/when-did-errno-been-set/</link>
@@ -17,15 +17,6 @@
 它到底是怎么来的？系统是在什么时候设置的这个值的？毕竟系统调用 &lt;code&gt;syscall&lt;/code&gt; 只会返回 -1 来表示当前系统调用出错……&lt;/p&gt;
 &lt;p&gt;实际上，在使用系统调用的时候，我们通过一系列 syscall 获取的返回值是已经被 &lt;code&gt;libc&lt;/code&gt;
 覆写过的了&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Linux 小记(一)</title>
-      <link>https://sslime336.github.io/post/linux-notes1/</link>
-      <pubDate>Sun, 04 Jun 2023 13:02:09 +0800</pubDate>
-      
-      <guid>https://sslime336.github.io/post/linux-notes1/</guid>
-      <description>&lt;p&gt;Linux 备忘录(bushi)&lt;/p&gt;</description>
     </item>
     
   </channel>
